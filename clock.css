@@ -1,0 +1,121 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary-color: #f6f7fb;
+    --white-color: #fff;
+    --black-color: #18191a;
+    --red-color: #e74c3c;
+}
+
+body.dark {
+    --primary-color: #242526;
+    --black-color: #fff;
+    --white-color: #18191a;
+    --red-color: #e74c3c;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+}
+
+.container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: var(--white-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.clock {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 10px solid var(--black-color);
+    background: var(--white-color);
+}
+
+.clock label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(calc(var(--i) * 30deg));
+    transform-origin: center center;
+}
+
+.clock label span {
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black-color);
+    transform: rotate(calc(var(--i) * -30deg));
+    transform-origin: center center;
+}
+
+.indicator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 25px;
+    transform-origin: bottom;
+}
+
+.hour-hand {
+    height: 80px;
+    width: 8px;
+    background: var(--black-color);
+}
+
+.minute-hand {
+    height: 100px;
+    width: 6px;
+    background: var(--black-color);
+}
+
+.second-hand {
+    height: 120px;
+    width: 2px;
+    background: var(--red-color);
+}
+
+.mode-switch {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+    color: var(--white-color);
+    background: var(--black-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    bottom: 420px;
+}
